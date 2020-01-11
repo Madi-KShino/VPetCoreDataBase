@@ -41,6 +41,7 @@
 			isa = PBXGroup;
 			children = (
 				171E923722B57B0B002495FE /* TamagotchiCoreData */,
+				5366EB6323CA4F7800C831F4 /* Resources */,
 				171E923622B57B0B002495FE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,13 +57,10 @@
 		171E923722B57B0B002495FE /* TamagotchiCoreData */ = {
 			isa = PBXGroup;
 			children = (
-				171E923822B57B0B002495FE /* AppDelegate.swift */,
 				171E923C22B57B0B002495FE /* Main.storyboard */,
-				171E925D22B5B090002495FE /* Model Controller */,
 				171E925622B5ADD8002495FE /* Model */,
+				171E925D22B5B090002495FE /* Model Controller */,
 				171E925122B5946F002495FE /* View Controller */,
-				171E924222B57B0C002495FE /* Assets.xcassets */,
-				171E924422B57B0C002495FE /* LaunchScreen.storyboard */,
 				171E924722B57B0C002495FE /* Info.plist */,
 				171E923F22B57B0B002495FE /* TamagotchiCoreData.xcdatamodeld */,
 			);
@@ -89,6 +87,16 @@
 				171E925B22B5B08B002495FE /* VirtualPetController.swift */,
 			);
 			path = "Model Controller";
+			sourceTree = "<group>";
+		};
+		5366EB6323CA4F7800C831F4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				171E923822B57B0B002495FE /* AppDelegate.swift */,
+				171E924222B57B0C002495FE /* Assets.xcassets */,
+				171E924422B57B0C002495FE /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
