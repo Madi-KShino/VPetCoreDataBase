@@ -229,15 +229,110 @@
                         <viewLayoutGuide key="safeArea" id="wlr-j1-H4o"/>
                     </view>
                     <navigationItem key="navigationItem" title="MY PETS" id="Rqs-1p-jyT">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="0Jb-Y4-ogP"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="0Jb-Y4-ogP">
+                            <connections>
+                                <action selector="adoptButtonTapped:" destination="M41-eH-aRl" id="LLL-UG-bRl"/>
+                                <segue destination="D9v-z6-Jle" kind="presentation" modalPresentationStyle="overCurrentContext" id="eTi-3W-Aws"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="adoptNewPetButton" destination="0Jb-Y4-ogP" id="qb1-I5-loI"/>
                         <outlet property="petListTableView" destination="POg-W4-Fok" id="lDU-Fl-avf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="adH-8w-1Ko" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1011.5942028985507" y="146.65178571428569"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="JQX-u7-New">
+            <objects>
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="D9v-z6-Jle" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GEg-Jd-2m8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JSl-CR-2Mv">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RsV-UN-k5r">
+                                <rect key="frame" x="50" y="244" width="314" height="269"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2zB-Nh-SMO">
+                                        <rect key="frame" x="-20" y="34" width="354" height="201"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Your New Pet!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EdQ-wn-TM6">
+                                                <rect key="frame" x="55" y="0.0" width="244.5" height="30"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
+                                                <color key="textColor" red="0.33891892429999998" green="0.47391963009999999" blue="0.4980450273" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="hamsterNormal" id="Xa8-Lu-qmQ">
+                                                <rect key="frame" x="137" y="40" width="80" height="77"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Hamtaro" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="re4-C6-ZLJ">
+                                                <rect key="frame" x="50" y="127" width="254" height="30"/>
+                                                <color key="textColor" red="0.86104637380000004" green="0.60424506659999999" blue="0.59607177970000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="WGP-7E-ZIb">
+                                                <rect key="frame" x="20" y="167" width="314" height="34"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9EK-Va-7N0">
+                                                        <rect key="frame" x="0.0" y="0.0" width="147" height="34"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                                                        <state key="normal" title="Cancel">
+                                                            <color key="titleColor" red="0.33891892429999998" green="0.47391963009999999" blue="0.4980450273" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aX8-d6-kH3">
+                                                        <rect key="frame" x="167" y="0.0" width="147" height="34"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                                                        <state key="normal" title="Adopt">
+                                                            <color key="titleColor" red="0.33891892429999998" green="0.47391963009999999" blue="0.4980450273" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        </state>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="WGP-7E-ZIb" firstAttribute="leading" secondItem="2zB-Nh-SMO" secondAttribute="leading" constant="20" id="2vi-Wd-JrR"/>
+                                            <constraint firstAttribute="trailing" secondItem="re4-C6-ZLJ" secondAttribute="trailing" constant="50" id="JyG-Aj-Blf"/>
+                                            <constraint firstAttribute="trailing" secondItem="WGP-7E-ZIb" secondAttribute="trailing" constant="20" id="alx-S7-c3V"/>
+                                            <constraint firstItem="re4-C6-ZLJ" firstAttribute="leading" secondItem="2zB-Nh-SMO" secondAttribute="leading" constant="50" id="xNg-pN-C6L"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="2zB-Nh-SMO" firstAttribute="width" secondItem="RsV-UN-k5r" secondAttribute="width" multiplier="1.12739" id="6gL-MF-4Bj"/>
+                                    <constraint firstItem="2zB-Nh-SMO" firstAttribute="centerX" secondItem="RsV-UN-k5r" secondAttribute="centerX" id="dig-Vz-emQ"/>
+                                    <constraint firstItem="2zB-Nh-SMO" firstAttribute="height" secondItem="RsV-UN-k5r" secondAttribute="height" multiplier="0.747212" id="mJY-vC-9uS"/>
+                                    <constraint firstItem="2zB-Nh-SMO" firstAttribute="centerY" secondItem="RsV-UN-k5r" secondAttribute="centerY" id="x3d-XQ-yDz"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.15111301369863014" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="JSl-CR-2Mv" firstAttribute="top" secondItem="KzR-rT-WW9" secondAttribute="top" id="0Ec-cc-3cF"/>
+                            <constraint firstItem="KzR-rT-WW9" firstAttribute="trailing" secondItem="RsV-UN-k5r" secondAttribute="trailing" constant="50" id="8LO-uZ-oJ7"/>
+                            <constraint firstItem="RsV-UN-k5r" firstAttribute="top" secondItem="KzR-rT-WW9" secondAttribute="top" constant="200" id="DJe-t0-aiC"/>
+                            <constraint firstItem="JSl-CR-2Mv" firstAttribute="leading" secondItem="KzR-rT-WW9" secondAttribute="leading" id="Lg0-UG-Q9k"/>
+                            <constraint firstItem="RsV-UN-k5r" firstAttribute="height" secondItem="GEg-Jd-2m8" secondAttribute="height" multiplier="0.3" id="Tww-Q3-h2a"/>
+                            <constraint firstItem="KzR-rT-WW9" firstAttribute="trailing" secondItem="JSl-CR-2Mv" secondAttribute="trailing" id="V3c-WT-SgE"/>
+                            <constraint firstItem="KzR-rT-WW9" firstAttribute="bottom" secondItem="JSl-CR-2Mv" secondAttribute="bottom" id="jNn-yJ-DPG"/>
+                            <constraint firstItem="RsV-UN-k5r" firstAttribute="leading" secondItem="KzR-rT-WW9" secondAttribute="leading" constant="50" id="pYf-11-enb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="KzR-rT-WW9"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WyS-g4-Xa7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1011.5942028985507" y="851.78571428571422"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wZj-jD-74E">
