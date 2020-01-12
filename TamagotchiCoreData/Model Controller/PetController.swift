@@ -20,7 +20,7 @@ class PetController {
     init() {
         let request: NSFetchRequest<Pet> = Pet.fetchRequest()
         request.sortDescriptors = [NSSortDescriptor(key: "timeSinceFed", ascending: true)]
-        let resultsController: NSFetchedResultsController<Pet> = NSFetchedResultsController(fetchRequest: request, managedObjectContext: CoreDataStack.managedObjectContext, sectionNameKeyPath: "timeSinceFed", cacheName: nil)
+        let resultsController: NSFetchedResultsController<Pet> = NSFetchedResultsController(fetchRequest: request, managedObjectContext: CoreDataStack.managedObjectContext, sectionNameKeyPath: "name", cacheName: nil)
         fetchedResultController = resultsController
         do {
             try fetchedResultController.performFetch()
@@ -32,20 +32,35 @@ class PetController {
     //MARK: - CRUD
     
     func createPet(withName name: String) {
-        _ = Pet(name: name, timeSinceFed: Date(), hunger: 50, happiness: 50)
+        _ = Pet(name: name, timeLastFed: Date(), timeLastPet: Date(), hunger: 50, happiness: 50)
         saveToPersistentStore()
     }
     
-    func updatePet() {
-        
+    func updateStats(forPet pet: Pet){
+        let currentDate = Date()
+        guard let petLastFed = pet.timeLastFed,
+            let petLastPet = pet.timeLastPet else {return}
+        let timeSinceFed = (currentDate.timeIntervalSince(petLastFed) / 60)
+        let timeSincePet = (currentDate.timeIntervalSince(petLastPet) / 100)
+        pet.hunger = min(100, pet.hunger + Int64(timeSinceFed))
+        pet.happiness = max(0, pet.happiness - Int64(timeSincePet))
+        saveToPersistentStore()
     }
     
-    func setPetFree() {
-        
+    func release(pet: Pet) {
+        CoreDataStack.managedObjectContext.delete(pet)
+        saveToPersistentStore()
     }
     
-    func setAllPetsFree() {
-        
+    func releaseAllPets() {
+        let request: NSFetchRequest<NSFetchRequestResult> = Pet.fetchRequest()
+        let batchDelete = NSBatchDeleteRequest(fetchRequest: request)
+        let moc = CoreDataStack.managedObjectContext
+        do {
+            try moc.execute(batchDelete)
+        } catch {
+            print(error.localizedDescription)
+        }
     }
     
     //MARK: - Persistence

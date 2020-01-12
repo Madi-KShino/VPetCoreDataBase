@@ -11,10 +11,11 @@ import CoreData
 
 extension Pet {
     @discardableResult
-    convenience init(name: String, timeSinceFed: Date, hunger: Int64, happiness: Int64, context: NSManagedObjectContext = CoreDataStack.managedObjectContext) {
+    convenience init(name: String, timeLastFed: Date, timeLastPet: Date, hunger: Int64, happiness: Int64, context: NSManagedObjectContext = CoreDataStack.managedObjectContext) {
         self.init(context: context)
         self.name = name
-        self.timeSinceFed = timeSinceFed
+        self.timeLastFed = timeLastFed
+        self.timeLastPet = timeLastPet
         self.hunger = hunger
         self.happiness = happiness
     }

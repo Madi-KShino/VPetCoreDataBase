@@ -16,6 +16,8 @@
 		5366EB6823CA548B00C831F4 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5366EB6723CA548B00C831F4 /* CoreDataStack.swift */; };
 		5366EB6A23CA58E600C831F4 /* Pet+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5366EB6923CA58E600C831F4 /* Pet+Convenience.swift */; };
 		5366EB6C23CA59A100C831F4 /* PetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5366EB6B23CA59A100C831F4 /* PetController.swift */; };
+		5366EB7023CBA26D00C831F4 /* PetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5366EB6F23CBA26D00C831F4 /* PetsViewController.swift */; };
+		5366EB7223CBA2BA00C831F4 /* PetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5366EB7123CBA2BA00C831F4 /* PetTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		5366EB6723CA548B00C831F4 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		5366EB6923CA58E600C831F4 /* Pet+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pet+Convenience.swift"; sourceTree = "<group>"; };
 		5366EB6B23CA59A100C831F4 /* PetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetController.swift; sourceTree = "<group>"; };
+		5366EB6F23CBA26D00C831F4 /* PetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PetsViewController.swift; path = "TamagotchiCoreData/Model Controller/PetsViewController.swift"; sourceTree = SOURCE_ROOT; };
+		5366EB7123CBA2BA00C831F4 /* PetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PetTableViewCell.swift; path = "TamagotchiCoreData/Model Controller/PetTableViewCell.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +80,8 @@
 		171E925122B5946F002495FE /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				5366EB6F23CBA26D00C831F4 /* PetsViewController.swift */,
+				5366EB7123CBA2BA00C831F4 /* PetTableViewCell.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -184,7 +190,9 @@
 				5366EB6A23CA58E600C831F4 /* Pet+Convenience.swift in Sources */,
 				5366EB6C23CA59A100C831F4 /* PetController.swift in Sources */,
 				171E923922B57B0B002495FE /* AppDelegate.swift in Sources */,
+				5366EB7223CBA2BA00C831F4 /* PetTableViewCell.swift in Sources */,
 				5366EB6823CA548B00C831F4 /* CoreDataStack.swift in Sources */,
+				5366EB7023CBA26D00C831F4 /* PetsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
