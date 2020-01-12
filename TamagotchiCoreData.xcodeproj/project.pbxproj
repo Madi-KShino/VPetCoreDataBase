@@ -18,6 +18,7 @@
 		5366EB6C23CA59A100C831F4 /* PetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5366EB6B23CA59A100C831F4 /* PetController.swift */; };
 		5366EB7023CBA26D00C831F4 /* PetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5366EB6F23CBA26D00C831F4 /* PetsViewController.swift */; };
 		5366EB7223CBA2BA00C831F4 /* PetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5366EB7123CBA2BA00C831F4 /* PetTableViewCell.swift */; };
+		5366EB7423CBACDF00C831F4 /* AdoptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5366EB7323CBACDF00C831F4 /* AdoptViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		5366EB6B23CA59A100C831F4 /* PetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetController.swift; sourceTree = "<group>"; };
 		5366EB6F23CBA26D00C831F4 /* PetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PetsViewController.swift; path = "TamagotchiCoreData/Model Controller/PetsViewController.swift"; sourceTree = SOURCE_ROOT; };
 		5366EB7123CBA2BA00C831F4 /* PetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PetTableViewCell.swift; path = "TamagotchiCoreData/Model Controller/PetTableViewCell.swift"; sourceTree = SOURCE_ROOT; };
+		5366EB7323CBACDF00C831F4 /* AdoptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AdoptViewController.swift; path = "TamagotchiCoreData/Model Controller/AdoptViewController.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				5366EB6F23CBA26D00C831F4 /* PetsViewController.swift */,
+				5366EB7323CBACDF00C831F4 /* AdoptViewController.swift */,
 				5366EB7123CBA2BA00C831F4 /* PetTableViewCell.swift */,
 			);
 			path = "View Controller";
@@ -186,6 +189,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				171E925C22B5B08B002495FE /* VirtualPetController.swift in Sources */,
+				5366EB7423CBACDF00C831F4 /* AdoptViewController.swift in Sources */,
 				171E924122B57B0B002495FE /* TamagotchiCoreData.xcdatamodeld in Sources */,
 				5366EB6A23CA58E600C831F4 /* Pet+Convenience.swift in Sources */,
 				5366EB6C23CA59A100C831F4 /* PetController.swift in Sources */,

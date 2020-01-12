@@ -231,7 +231,6 @@
                     <navigationItem key="navigationItem" title="MY PETS" id="Rqs-1p-jyT">
                         <barButtonItem key="rightBarButtonItem" title="Item" id="0Jb-Y4-ogP">
                             <connections>
-                                <action selector="adoptButtonTapped:" destination="M41-eH-aRl" id="LLL-UG-bRl"/>
                                 <segue destination="D9v-z6-Jle" kind="presentation" modalPresentationStyle="overCurrentContext" id="eTi-3W-Aws"/>
                             </connections>
                         </barButtonItem>
@@ -245,10 +244,10 @@
             </objects>
             <point key="canvasLocation" x="1011.5942028985507" y="146.65178571428569"/>
         </scene>
-        <!--View Controller-->
+        <!--Adopt View Controller-->
         <scene sceneID="JQX-u7-New">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="D9v-z6-Jle" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="D9v-z6-Jle" customClass="AdoptViewController" customModule="TamagotchiCoreData" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GEg-Jd-2m8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -256,12 +255,15 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JSl-CR-2Mv">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="dismissButtonTapped:" destination="D9v-z6-Jle" eventType="touchUpInside" id="atz-gt-m43"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RsV-UN-k5r">
-                                <rect key="frame" x="50" y="244" width="314" height="269"/>
+                                <rect key="frame" x="41.5" y="244" width="331" height="269"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2zB-Nh-SMO">
-                                        <rect key="frame" x="-20" y="34" width="354" height="201"/>
+                                        <rect key="frame" x="-11.5" y="34" width="354" height="201"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Your New Pet!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EdQ-wn-TM6">
                                                 <rect key="frame" x="55" y="0.0" width="244.5" height="30"/>
@@ -279,22 +281,29 @@
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="WGP-7E-ZIb">
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="WGP-7E-ZIb">
                                                 <rect key="frame" x="20" y="167" width="314" height="34"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9EK-Va-7N0">
-                                                        <rect key="frame" x="0.0" y="0.0" width="147" height="34"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="152" height="34"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
                                                         <state key="normal" title="Cancel">
                                                             <color key="titleColor" red="0.33891892429999998" green="0.47391963009999999" blue="0.4980450273" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="cancelButtonTapped:" destination="D9v-z6-Jle" eventType="touchUpInside" id="AIB-lZ-o47"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aX8-d6-kH3">
-                                                        <rect key="frame" x="167" y="0.0" width="147" height="34"/>
+                                                        <rect key="frame" x="162" y="0.0" width="152" height="34"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
                                                         <state key="normal" title="Adopt">
                                                             <color key="titleColor" red="0.33891892429999998" green="0.47391963009999999" blue="0.4980450273" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="adoptButtonTapped:" destination="D9v-z6-Jle" eventType="touchUpInside" id="Sax-A5-bqG"/>
+                                                            <segue destination="EyC-BV-g4E" kind="unwind" identifier="toHomeVC" unwindAction="unwindFromAdoptVCWithSegue:" id="bxc-gU-WpM"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -309,8 +318,8 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstItem="2zB-Nh-SMO" firstAttribute="width" secondItem="RsV-UN-k5r" secondAttribute="width" multiplier="1.12739" id="6gL-MF-4Bj"/>
-                                    <constraint firstItem="2zB-Nh-SMO" firstAttribute="centerX" secondItem="RsV-UN-k5r" secondAttribute="centerX" id="dig-Vz-emQ"/>
+                                    <constraint firstItem="2zB-Nh-SMO" firstAttribute="centerX" secondItem="RsV-UN-k5r" secondAttribute="centerX" id="Ihy-qr-YVg"/>
+                                    <constraint firstItem="2zB-Nh-SMO" firstAttribute="centerY" secondItem="RsV-UN-k5r" secondAttribute="centerY" id="a1K-NV-493"/>
                                     <constraint firstItem="2zB-Nh-SMO" firstAttribute="height" secondItem="RsV-UN-k5r" secondAttribute="height" multiplier="0.747212" id="mJY-vC-9uS"/>
                                     <constraint firstItem="2zB-Nh-SMO" firstAttribute="centerY" secondItem="RsV-UN-k5r" secondAttribute="centerY" id="x3d-XQ-yDz"/>
                                 </constraints>
@@ -319,18 +328,28 @@
                         <color key="backgroundColor" white="0.0" alpha="0.15111301369863014" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="JSl-CR-2Mv" firstAttribute="top" secondItem="KzR-rT-WW9" secondAttribute="top" id="0Ec-cc-3cF"/>
-                            <constraint firstItem="KzR-rT-WW9" firstAttribute="trailing" secondItem="RsV-UN-k5r" secondAttribute="trailing" constant="50" id="8LO-uZ-oJ7"/>
                             <constraint firstItem="RsV-UN-k5r" firstAttribute="top" secondItem="KzR-rT-WW9" secondAttribute="top" constant="200" id="DJe-t0-aiC"/>
                             <constraint firstItem="JSl-CR-2Mv" firstAttribute="leading" secondItem="KzR-rT-WW9" secondAttribute="leading" id="Lg0-UG-Q9k"/>
                             <constraint firstItem="RsV-UN-k5r" firstAttribute="height" secondItem="GEg-Jd-2m8" secondAttribute="height" multiplier="0.3" id="Tww-Q3-h2a"/>
                             <constraint firstItem="KzR-rT-WW9" firstAttribute="trailing" secondItem="JSl-CR-2Mv" secondAttribute="trailing" id="V3c-WT-SgE"/>
+                            <constraint firstItem="RsV-UN-k5r" firstAttribute="centerX" secondItem="KzR-rT-WW9" secondAttribute="centerX" id="W6T-2c-Ki2"/>
+                            <constraint firstItem="RsV-UN-k5r" firstAttribute="width" secondItem="GEg-Jd-2m8" secondAttribute="width" multiplier="0.8" id="YdA-4s-0iq"/>
                             <constraint firstItem="KzR-rT-WW9" firstAttribute="bottom" secondItem="JSl-CR-2Mv" secondAttribute="bottom" id="jNn-yJ-DPG"/>
-                            <constraint firstItem="RsV-UN-k5r" firstAttribute="leading" secondItem="KzR-rT-WW9" secondAttribute="leading" constant="50" id="pYf-11-enb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KzR-rT-WW9"/>
                     </view>
+                    <connections>
+                        <outlet property="adoptButton" destination="aX8-d6-kH3" id="ONh-cz-j6F"/>
+                        <outlet property="cancelButton" destination="9EK-Va-7N0" id="xif-kG-ZE2"/>
+                        <outlet property="dismissButton" destination="JSl-CR-2Mv" id="Nar-qZ-YQe"/>
+                        <outlet property="namePetlabel" destination="EdQ-wn-TM6" id="l1f-Rv-tnk"/>
+                        <outlet property="nameTextField" destination="re4-C6-ZLJ" id="Tww-dX-LLP"/>
+                        <outlet property="petImage" destination="Xa8-Lu-qmQ" id="2wt-0F-gk5"/>
+                        <outlet property="popupView" destination="RsV-UN-k5r" id="FHq-GJ-YbW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WyS-g4-Xa7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="EyC-BV-g4E" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1011.5942028985507" y="851.78571428571422"/>
         </scene>
