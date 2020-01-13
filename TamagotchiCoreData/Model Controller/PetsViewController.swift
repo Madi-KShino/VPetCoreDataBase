@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class PetsViewController: UIViewController {
 
@@ -46,10 +47,6 @@ class PetsViewController: UIViewController {
         petListTableView.delegate = self
     }
     
-    func fetchPets() {
-        
-    }
-    
     //MARK: - Navigation
     @IBAction func unwindFromAdoptVC(segue:UIStoryboardSegue) {
         let data = segue.source as? AdoptViewController
@@ -58,67 +55,70 @@ class PetsViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        
     }
 }
 
-//TableView Data Source
+//MARK: - Table View Data Source
 extension PetsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let pairs = pairs else { return 0 }
-        let sectionCount = pairs.count - 1
-        if section <= sectionCount {
-            return pairs[section].count
-        } else { return 0 }
-    }
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if pairs == nil {
-            return ""
-        } else {
-            return "Pair \(section+1)"
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = UIView()
-        headerView.backgroundColor = UIColor.clear
-        let headerLabel = UILabel(frame: CGRect(x: 30, y: 0, width:
-            tableView.bounds.size.width, height: tableView.bounds.size.height))
-        headerLabel.font = UIFont(name: "Arial Rounded MT Bold", size: 15)
-        headerLabel.textColor = #colorLiteral(red: 0.8236967921, green: 0.5886859298, blue: 0.6307470798, alpha: 1)
-        headerLabel.text = self.tableView(nameListTableView, titleForHeaderInSection: section)
-        headerLabel.sizeToFit()
-        headerView.addSubview(headerLabel)
-        return headerView
+        PetController.sharedInstance.fetchedResultController.sections?[section].numberOfObjects ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "personCell", for: indexPath)
-        guard let pairs = pairs else { return UITableViewCell() }
-        let person = pairs[indexPath.section][indexPath.row]
-        cell.textLabel?.text = person.name
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "petCell", for: indexPath) as? PetTableViewCell else { return UITableViewCell() }
+        let pet = PetController.sharedInstance.fetchedResultController.object(at: indexPath)
+        cell.update(withPet: pet)
         return cell
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            guard var pairs = pairs else { return }
-            let person = pairs[indexPath.section][indexPath.row]
-            PersonController.shared.delete(person: person) { (success) in
-                if success {
-                    DispatchQueue.main.async {
-                        pairs[indexPath.section].remove(at: indexPath.row)
-                        guard let index = self.people.firstIndex(of: person) else { return }
-                        self.people.remove(at: index)
-                        self.createNewPairings()
-                        self.nameListTableView.reloadData()
-                        print("success")
-                    }
-                }
-            }
+            let petToRelease = PetController.sharedInstance.fetchedResultController.object(at: indexPath)
+            PetController.sharedInstance.release(pet: petToRelease)
         }
+    }
+}
+
+//MARK: - NSFetchedResultsControllerDelegate
+extension PetsViewController: NSFetchedResultsControllerDelegate {
+    
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        petListTableView.beginUpdates()
+    }
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        switch type {
+        case .delete:
+            guard let indexPath = indexPath else {return}
+            petListTableView.deleteRows(at: [indexPath], with: .automatic)
+        case .insert:
+            guard let newIndexPath = newIndexPath else {return}
+            petListTableView.insertRows(at: [newIndexPath], with: .automatic)
+        case .move:
+            guard let oldIndexPath = indexPath, let newIndexPath = newIndexPath else {return}
+            petListTableView.moveRow(at: oldIndexPath, to: newIndexPath)
+        case .update:
+            guard let indexPath = indexPath else {return}
+            petListTableView.reloadRows(at: [indexPath], with: .automatic)
+        @unknown default:
+            fatalError()
+        }
+    }
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {
+        switch (type) {
+        case NSFetchedResultsChangeType.insert:
+            self.petListTableView?.insertSections(NSIndexSet.init(index: sectionIndex) as IndexSet, with: .fade)
+        case NSFetchedResultsChangeType.delete:
+            self.petListTableView.deleteSections(NSIndexSet.init(index: sectionIndex) as IndexSet, with: .fade)
+        default:
+            return
+        }
+    }
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        petListTableView.endUpdates()
     }
 }

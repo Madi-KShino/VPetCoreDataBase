@@ -12,7 +12,6 @@
 		171E924122B57B0B002495FE /* TamagotchiCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 171E923F22B57B0B002495FE /* TamagotchiCoreData.xcdatamodeld */; };
 		171E924322B57B0C002495FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 171E924222B57B0C002495FE /* Assets.xcassets */; };
 		171E924622B57B0C002495FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 171E924422B57B0C002495FE /* LaunchScreen.storyboard */; };
-		171E925C22B5B08B002495FE /* VirtualPetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171E925B22B5B08B002495FE /* VirtualPetController.swift */; };
 		5366EB6823CA548B00C831F4 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5366EB6723CA548B00C831F4 /* CoreDataStack.swift */; };
 		5366EB6A23CA58E600C831F4 /* Pet+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5366EB6923CA58E600C831F4 /* Pet+Convenience.swift */; };
 		5366EB6C23CA59A100C831F4 /* PetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5366EB6B23CA59A100C831F4 /* PetController.swift */; };
@@ -29,7 +28,6 @@
 		171E924222B57B0C002495FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		171E924522B57B0C002495FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		171E924722B57B0C002495FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		171E925B22B5B08B002495FE /* VirtualPetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualPetController.swift; sourceTree = "<group>"; };
 		5366EB6723CA548B00C831F4 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		5366EB6923CA58E600C831F4 /* Pet+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pet+Convenience.swift"; sourceTree = "<group>"; };
 		5366EB6B23CA59A100C831F4 /* PetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetController.swift; sourceTree = "<group>"; };
@@ -92,7 +90,6 @@
 		171E925D22B5B090002495FE /* Model Controller */ = {
 			isa = PBXGroup;
 			children = (
-				171E925B22B5B08B002495FE /* VirtualPetController.swift */,
 				5366EB6B23CA59A100C831F4 /* PetController.swift */,
 			);
 			path = "Model Controller";
@@ -188,7 +185,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				171E925C22B5B08B002495FE /* VirtualPetController.swift in Sources */,
 				5366EB7423CBACDF00C831F4 /* AdoptViewController.swift in Sources */,
 				171E924122B57B0B002495FE /* TamagotchiCoreData.xcdatamodeld in Sources */,
 				5366EB6A23CA58E600C831F4 /* Pet+Convenience.swift in Sources */,

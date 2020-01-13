@@ -10,6 +10,8 @@ import UIKit
 
 class PetTableViewCell: UITableViewCell {
 
+    //Properties
+    
     //Outlets
     @IBOutlet weak var petPicImageVIew: UIImageView!
     @IBOutlet weak var petNameLabel: UILabel!
@@ -17,13 +19,15 @@ class PetTableViewCell: UITableViewCell {
     //Lifecycle
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    }
+    
+    //Helper Functions
+    func update(withPet pet: Pet) {
+        petNameLabel.text = pet.name
     }
 
 }

@@ -3,4 +3,194 @@
    uuid = "135998BF-020B-43C2-95AC-D5E6F2B8C27D"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "84A7656B-1631-4523-96BA-B7DD257DCF1A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TamagotchiCoreData/Model Controller/PetsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "PetsViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "84A7656B-1631-4523-96BA-B7DD257DCF1A - bd60a5229a25c9fb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TamagotchiCoreData.PetsViewController.pets.getter : Swift.Array&lt;TamagotchiCoreData.Pet&gt;"
+                  moduleName = "TamagotchiCoreData"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kaorishino/Documents/GitHub/VirtualPet/VPetCoreDataBase/TamagotchiCoreData/Model%20Controller/PetsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "122">
+               </Location>
+               <Location
+                  uuid = "84A7656B-1631-4523-96BA-B7DD257DCF1A - 5feb6f864e73cdf7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TamagotchiCoreData.PetsViewController.pets.setter : Swift.Array&lt;TamagotchiCoreData.Pet&gt;"
+                  moduleName = "TamagotchiCoreData"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kaorishino/Documents/GitHub/VirtualPet/VPetCoreDataBase/TamagotchiCoreData/Model%20Controller/PetsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "144">
+               </Location>
+               <Location
+                  uuid = "84A7656B-1631-4523-96BA-B7DD257DCF1A - 9205188c5e8058e6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TamagotchiCoreData.PetsViewController.pets.modify : Swift.Array&lt;TamagotchiCoreData.Pet&gt;"
+                  moduleName = "TamagotchiCoreData"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kaorishino/Documents/GitHub/VirtualPet/VPetCoreDataBase/TamagotchiCoreData/Model%20Controller/PetsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  uuid = "84A7656B-1631-4523-96BA-B7DD257DCF1A - 7e8e95d343e32b17"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TamagotchiCoreData.PetsViewController.pets.modify : Swift.Array&lt;TamagotchiCoreData.Pet&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "TamagotchiCoreData"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kaorishino/Documents/GitHub/VirtualPet/VPetCoreDataBase/TamagotchiCoreData/Model%20Controller/PetsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "84A7656B-1631-4523-96BA-B7DD257DCF1A - 40f89337de60d8e7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TamagotchiCoreData.PetsViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; TamagotchiCoreData.PetsViewController"
+                  moduleName = "TamagotchiCoreData"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kaorishino/Documents/GitHub/VirtualPet/VPetCoreDataBase/TamagotchiCoreData/Model%20Controller/PetsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "181">
+               </Location>
+               <Location
+                  uuid = "84A7656B-1631-4523-96BA-B7DD257DCF1A - 1838254c9d50ca55"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TamagotchiCoreData.PetsViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;TamagotchiCoreData.PetsViewController&gt;"
+                  moduleName = "TamagotchiCoreData"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kaorishino/Documents/GitHub/VirtualPet/VPetCoreDataBase/TamagotchiCoreData/Model%20Controller/PetsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "114">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1B9CEE22-47E0-4DBC-B47E-341528CF9263"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TamagotchiCoreData/Model Controller/PetsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9B53EF2D-3EE4-4985-BE93-081DA828D3CA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TamagotchiCoreData/Model Controller/PetsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "setMainView()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F5F562EE-BE50-452F-B27B-8D461EAEE5EC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TamagotchiCoreData/Model Controller/PetsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "setNavBarView()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B3011091-D056-4D57-A1D2-938D86A93D1F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TamagotchiCoreData/Model Controller/PetsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "setDelegates()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6E37F2C7-1266-40C7-9448-C3C47B110E54"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TamagotchiCoreData/Model Controller/PetController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "init()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

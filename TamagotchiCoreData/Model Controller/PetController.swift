@@ -19,7 +19,7 @@ class PetController {
     
     init() {
         let request: NSFetchRequest<Pet> = Pet.fetchRequest()
-        request.sortDescriptors = [NSSortDescriptor(key: "timeSinceFed", ascending: true)]
+        request.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
         let resultsController: NSFetchedResultsController<Pet> = NSFetchedResultsController(fetchRequest: request, managedObjectContext: CoreDataStack.managedObjectContext, sectionNameKeyPath: "name", cacheName: nil)
         fetchedResultController = resultsController
         do {
@@ -30,7 +30,6 @@ class PetController {
     }
     
     //MARK: - CRUD
-    
     func createPet(withName name: String) {
         _ = Pet(name: name, timeLastFed: Date(), timeLastPet: Date(), hunger: 50, happiness: 50)
         saveToPersistentStore()
